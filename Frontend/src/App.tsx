@@ -3,21 +3,18 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-
-import Login from './Pages/Login/Login';
-import Signup from './Pages/Signup/Signup';
-import Board from "./components/Board/Board";
-import { useAuth } from "./contexts/AuthContext";
+import useAuth from "./hooks/useAuth";
+import Protected from "./components/Protected";
+import Public from "./components/Public";
 
 
 function App() {
-  const {currentUser} = useAuth();
+  const {isLogin,token}=useAuth();
+  
   return (
     <Routes>
-      <Route path="/" element={currentUser?<Board/>:<Navigate to="/login"/>} />
-        <Route path="/login" element={currentUser?<Navigate to="/"/>:<Login/>} />
-        <Route path="/signup" element={currentUser?<Navigate to="/"/>:<Signup/>} />
-    </Routes>
+      <Route path="/" element={isLogin?<Protected token={token}/>:<Public/>} />
+       </Routes>
   );
 }
 
