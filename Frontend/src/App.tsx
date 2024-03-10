@@ -9,6 +9,7 @@ import Signup from './Pages/Signup/Signup';
 import Board from "./components/Board/Board";
 import { useAuth } from "./contexts/AuthContext";
 
+
 function App() {
   const {currentUser} = useAuth();
   return (
