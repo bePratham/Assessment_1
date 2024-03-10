@@ -4,8 +4,8 @@ import {
   Routes,
 } from "react-router-dom";
 
-import Login from './components/Login/Login';
-import Signup from './components/Signup/Signup';
+import Login from './Pages/Login/Login';
+import Signup from './Pages/Signup/Signup';
 import Board from "./components/Board/Board";
 import { useAuth } from "./contexts/AuthContext";
 

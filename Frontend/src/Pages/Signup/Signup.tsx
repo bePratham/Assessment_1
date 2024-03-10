@@ -25,8 +25,7 @@ const Signup: React.FC<SignupProps> = () => {
     try {
       setError("");
       setLoading(true);
-      const res = await signup(emailRef.current?.value, passwordRef.current?.value);
-     
+      await signup(emailRef.current?.value, passwordRef.current?.value);
     } catch {
       setError("Failed to create an account");
     }
